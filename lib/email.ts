@@ -153,6 +153,56 @@ export const emailService = {
     }
   },
 
+  async sendPasswordResetCode(to: string, name: string | undefined, code: string) {
+    if (!resend) {
+      return { success: false, error: 'RESEND_API_KEY not configured' };
+    }
+    try {
+      await resend.emails.send({
+        from: FROM_EMAIL,
+        to,
+        subject: 'Your FinTrackrX password reset code',
+        html: `
+          <!DOCTYPE html>
+          <html>
+            <head>
+              <meta charset="utf-8">
+              <style>
+                body { font-family: Arial, sans-serif; line-height: 1.6; color: #111827; background: #f9fafb; }
+                .container { max-width: 560px; margin: 0 auto; padding: 20px; }
+                .card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; overflow: hidden; }
+                .header { background: linear-gradient(135deg, #1f2937 0%, #374151 100%); color: white; padding: 24px; text-align: center; }
+                .content { padding: 24px; }
+                .code { font-size: 32px; font-weight: 700; letter-spacing: 6px; background: #f3f4f6; padding: 12px 16px; border-radius: 8px; text-align: center; }
+                .muted { color: #6b7280; font-size: 12px; }
+              </style>
+            </head>
+            <body>
+              <div class="container">
+                <div class="card">
+                  <div class="header">
+                    <h1>Password reset code</h1>
+                  </div>
+                  <div class="content">
+                    <p>Hi ${name || 'there'},</p>
+                    <p>Use the following code to reset your FinTrackrX password:</p>
+                    <div class="code">${code}</div>
+                    <p class="muted">This code expires in 10 minutes. If you didn’t request it, you can ignore this email.</p>
+                  </div>
+                </div>
+                <p class="muted" style="text-align:center;margin-top:12px;">&copy; ${new Date().getFullYear()} FinTrackrX</p>
+              </div>
+            </body>
+          </html>
+        `,
+      });
+      return { success: true };
+    } catch (error) {
+      console.error('Email send error (Password reset code):', error);
+      return { success: false, error };
+    }
+  },
+
   async sendTransactionAlert(to: string, name: string, transaction: {
     type: string;
     amount: number;
