@@ -6,7 +6,34 @@ const resendApiKey = process.env.RESEND_API_KEY;
 const resend = resendApiKey ? new Resend(resendApiKey) : null;
 
 // Default to Resend sandbox sender to avoid domain verification errors in non-production envs
-const FROM_EMAIL = process.env.EMAIL_FROM || 'FinTrackrX <onboarding@resend.dev>';
+// We also sanitize/validate the format because Resend returns 422 if the display name or email is malformed.
+const FROM_EMAIL_RAW = process.env.EMAIL_FROM || 'FinTrackrX <onboarding@resend.dev>';
+
+const VALID_EMAIL_ONLY = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+const NAME_EMAIL_PATTERN = /^([^<>]+)<\s*([^<>]+)\s*>$/; // captures `Name ` and `email@example.com`
+
+function resolveFrom(raw: string): string {
+  const trimmed = raw.trim().replace(/"/g, '');
+  // Try Name <email>
+  const nameMatch = trimmed.match(NAME_EMAIL_PATTERN);
+  if (nameMatch) {
+    const namePart = nameMatch[1].trim();
+    const emailPart = nameMatch[2].trim();
+    if (VALID_EMAIL_ONLY.test(emailPart)) {
+      // Some sandbox providers can reject unusual unicode—strip newlines and angle brackets from name.
+      const safeName = namePart.replace(/[\r\n<>]/g, '').trim();
+      return `${safeName} <${emailPart}>`;
+    }
+  }
+  // Plain email
+  if (VALID_EMAIL_ONLY.test(trimmed)) {
+    return trimmed;
+  }
+  // Fallback to pure sandbox address (no display name) if still invalid
+  return 'onboarding@resend.dev';
+}
+
+const FROM_EMAIL = resolveFrom(FROM_EMAIL_RAW);
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
 
 export const emailService = {
