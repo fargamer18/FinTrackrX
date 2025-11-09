@@ -5,7 +5,8 @@ import { Resend } from 'resend';
 const resendApiKey = process.env.RESEND_API_KEY;
 const resend = resendApiKey ? new Resend(resendApiKey) : null;
 
-const FROM_EMAIL = process.env.EMAIL_FROM || 'FinTrackrX <noreply@fintrackrx.com>';
+// Default to Resend sandbox sender to avoid domain verification errors in non-production envs
+const FROM_EMAIL = process.env.EMAIL_FROM || 'FinTrackrX <onboarding@resend.dev>';
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
 
 export const emailService = {
