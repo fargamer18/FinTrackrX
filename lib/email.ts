@@ -94,7 +94,8 @@ export const emailService = {
   },
 
   async sendPasswordResetEmail(to: string, name: string, token: string) {
-    const resetUrl = `${APP_URL}/reset-password?token=${token}`;
+    // Route lives at /auth/reset-password
+    const resetUrl = `${APP_URL}/auth/reset-password?token=${token}`;
 
     if (!resend) {
       return { success: false, error: 'RESEND_API_KEY not configured' };
