@@ -7,6 +7,8 @@ const resend = resendApiKey ? new Resend(resendApiKey) : null;
 
 // Default to Resend sandbox sender to avoid domain verification errors in non-production envs
 // We also sanitize/validate the format because Resend returns 422 if the display name or email is malformed.
+// Prefer explicit NEXT_PUBLIC_APP_URL. Fallback to Render's provided external URL. Final fallback is localhost.
+const APP_URL_ENV = process.env.NEXT_PUBLIC_APP_URL || process.env.RENDER_EXTERNAL_URL || 'http://localhost:3000';
 const FROM_EMAIL_RAW = process.env.EMAIL_FROM || 'FinTrackrX <onboarding@resend.dev>';
 
 const VALID_EMAIL_ONLY = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
@@ -34,7 +36,8 @@ function resolveFrom(raw: string): string {
 }
 
 const FROM_EMAIL = resolveFrom(FROM_EMAIL_RAW);
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+// Freeze chosen base URL once.
+const APP_URL = APP_URL_ENV;
 
 export const emailService = {
   async sendVerificationEmail(to: string, name: string, token: string) {
