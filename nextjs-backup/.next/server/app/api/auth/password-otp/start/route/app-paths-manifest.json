@@ -1,0 +1,3 @@
+{
+  "/api/auth/password-otp/start/route": "app/api/auth/password-otp/start/route.js"
+}

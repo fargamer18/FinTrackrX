@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":["file:///D:/FullStackDev/fintrackrx/app/api/auth/logout/route.ts"],"sourcesContent":["import { NextResponse } from 'next/server';\r\n\r\nexport async function POST() {\r\n  try {\r\n    // Create response\r\n    const response = NextResponse.json({\r\n      success: true,\r\n      message: 'Logged out successfully'\r\n    });\r\n\r\n    // Clear the token cookie\r\n    response.cookies.set('token', '', {\r\n      httpOnly: true,\r\n      secure: process.env.NODE_ENV === 'production',\r\n      sameSite: 'strict',\r\n      maxAge: 0, // Expire immediately\r\n      path: '/',\r\n    });\r\n\r\n    return response;\r\n  } catch (error) {\r\n    console.error('Logout error:', error);\r\n    return NextResponse.json(\r\n      { error: 'Logout failed' },\r\n      { status: 500 }\r\n    );\r\n  }\r\n}"],"names":[],"mappings":";;;;AAAA;;AAEO,eAAe;IACpB,IAAI;QACF,kBAAkB;QAClB,MAAM,WAAW,gJAAY,CAAC,IAAI,CAAC;YACjC,SAAS;YACT,SAAS;QACX;QAEA,yBAAyB;QACzB,SAAS,OAAO,CAAC,GAAG,CAAC,SAAS,IAAI;YAChC,UAAU;YACV,QAAQ,oDAAyB;YACjC,UAAU;YACV,QAAQ;YACR,MAAM;QACR;QAEA,OAAO;IACT,EAAE,OAAO,OAAO;QACd,QAAQ,KAAK,CAAC,iBAAiB;QAC/B,OAAO,gJAAY,CAAC,IAAI,CACtB;YAAE,OAAO;QAAgB,GACzB;YAAE,QAAQ;QAAI;IAElB;AACF","debugId":null}}]
+}

@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: fintrackrx-db
+    environment:
+      POSTGRES_DB: fintrackrx
+      POSTGRES_USER: fintrackrx
+      POSTGRES_PASSWORD: fintrackrx_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    networks:
+      - fintrackrx-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fintrackrx"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Spring Boot Application
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: fintrackrx-app
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/fintrackrx
+      SPRING_DATASOURCE_USERNAME: fintrackrx
+      SPRING_DATASOURCE_PASSWORD: fintrackrx_password
+      JWT_SECRET: your-docker-jwt-secret-key-change-in-production
+      SPRING_MAIL_HOST: smtp.gmail.com
+      SPRING_MAIL_PORT: 587
+      SPRING_MAIL_USERNAME: ${MAIL_USERNAME}
+      SPRING_MAIL_PASSWORD: ${MAIL_PASSWORD}
+    ports:
+      - "8080:8080"
+    networks:
+      - fintrackrx-network
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  fintrackrx-network:
+    driver: bridge

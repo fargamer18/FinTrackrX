@@ -1,0 +1,3 @@
+{
+  "/api/investments/sync-prices/route": "app/api/investments/sync-prices/route.js"
+}

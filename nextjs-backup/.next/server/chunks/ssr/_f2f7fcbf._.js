@@ -1,0 +1,3 @@
+module.exports=[35112,(a,b,c)=>{"use strict";b.exports=a.r(42602).vendored["react-ssr"].ReactDOM},32733,a=>{"use strict";function b(a){return new Intl.NumberFormat("en-IN",{style:"currency",currency:"INR",maximumFractionDigits:0}).format(a)}a.s(["categories",0,{income:["Salary","Freelance","Investment","Rental","Business","Other"],expense:["Groceries","Utilities","Transport","Rent/EMI","Education","Healthcare","Entertainment","Shopping","Food & Dining","Insurance","Other"]},"formatCurrency",()=>b])}];
+
+//# sourceMappingURL=_f2f7fcbf._.js.map

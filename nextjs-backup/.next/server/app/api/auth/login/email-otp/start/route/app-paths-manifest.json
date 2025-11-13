@@ -1,0 +1,3 @@
+{
+  "/api/auth/login/email-otp/start/route": "app/api/auth/login/email-otp/start/route.js"
+}

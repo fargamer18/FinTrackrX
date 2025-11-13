@@ -1,0 +1,353 @@
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/api/investments/[id]",
+      "regex": "^/api/investments/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/investments/(?<nxtPid>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/advisor",
+      "regex": "^/advisor(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/advisor(?:/)?$"
+    },
+    {
+      "page": "/api/accounts",
+      "regex": "^/api/accounts(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/accounts(?:/)?$"
+    },
+    {
+      "page": "/api/admin/bootstrap",
+      "regex": "^/api/admin/bootstrap(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/admin/bootstrap(?:/)?$"
+    },
+    {
+      "page": "/api/admin/seed-user",
+      "regex": "^/api/admin/seed\\-user(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/admin/seed\\-user(?:/)?$"
+    },
+    {
+      "page": "/api/ai/advisor",
+      "regex": "^/api/ai/advisor(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/ai/advisor(?:/)?$"
+    },
+    {
+      "page": "/api/ai/health",
+      "regex": "^/api/ai/health(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/ai/health(?:/)?$"
+    },
+    {
+      "page": "/api/ai/models",
+      "regex": "^/api/ai/models(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/ai/models(?:/)?$"
+    },
+    {
+      "page": "/api/ai/recommendations",
+      "regex": "^/api/ai/recommendations(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/ai/recommendations(?:/)?$"
+    },
+    {
+      "page": "/api/auth/forgot-password",
+      "regex": "^/api/auth/forgot\\-password(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/auth/forgot\\-password(?:/)?$"
+    },
+    {
+      "page": "/api/auth/login",
+      "regex": "^/api/auth/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/auth/login(?:/)?$"
+    },
+    {
+      "page": "/api/auth/login/email-otp/start",
+      "regex": "^/api/auth/login/email\\-otp/start(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/auth/login/email\\-otp/start(?:/)?$"
+    },
+    {
+      "page": "/api/auth/login/email-otp/verify",
+      "regex": "^/api/auth/login/email\\-otp/verify(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/auth/login/email\\-otp/verify(?:/)?$"
+    },
+    {
+      "page": "/api/auth/login/recovery",
+      "regex": "^/api/auth/login/recovery(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/auth/login/recovery(?:/)?$"
+    },
+    {
+      "page": "/api/auth/login/totp",
+      "regex": "^/api/auth/login/totp(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/auth/login/totp(?:/)?$"
+    },
+    {
+      "page": "/api/auth/logout",
+      "regex": "^/api/auth/logout(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/auth/logout(?:/)?$"
+    },
+    {
+      "page": "/api/auth/me",
+      "regex": "^/api/auth/me(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/auth/me(?:/)?$"
+    },
+    {
+      "page": "/api/auth/password-otp/start",
+      "regex": "^/api/auth/password\\-otp/start(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/auth/password\\-otp/start(?:/)?$"
+    },
+    {
+      "page": "/api/auth/password-otp/verify",
+      "regex": "^/api/auth/password\\-otp/verify(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/auth/password\\-otp/verify(?:/)?$"
+    },
+    {
+      "page": "/api/auth/reset-password",
+      "regex": "^/api/auth/reset\\-password(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/auth/reset\\-password(?:/)?$"
+    },
+    {
+      "page": "/api/auth/signup",
+      "regex": "^/api/auth/signup(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/auth/signup(?:/)?$"
+    },
+    {
+      "page": "/api/auth/verify-email",
+      "regex": "^/api/auth/verify\\-email(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/auth/verify\\-email(?:/)?$"
+    },
+    {
+      "page": "/api/health/db",
+      "regex": "^/api/health/db(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/health/db(?:/)?$"
+    },
+    {
+      "page": "/api/investments",
+      "regex": "^/api/investments(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/investments(?:/)?$"
+    },
+    {
+      "page": "/api/investments/sync-prices",
+      "regex": "^/api/investments/sync\\-prices(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/investments/sync\\-prices(?:/)?$"
+    },
+    {
+      "page": "/api/profile",
+      "regex": "^/api/profile(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/profile(?:/)?$"
+    },
+    {
+      "page": "/api/profile/avatar",
+      "regex": "^/api/profile/avatar(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/profile/avatar(?:/)?$"
+    },
+    {
+      "page": "/api/security/2fa/disable",
+      "regex": "^/api/security/2fa/disable(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/security/2fa/disable(?:/)?$"
+    },
+    {
+      "page": "/api/security/2fa/recovery/generate",
+      "regex": "^/api/security/2fa/recovery/generate(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/security/2fa/recovery/generate(?:/)?$"
+    },
+    {
+      "page": "/api/security/2fa/setup",
+      "regex": "^/api/security/2fa/setup(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/security/2fa/setup(?:/)?$"
+    },
+    {
+      "page": "/api/security/2fa/status",
+      "regex": "^/api/security/2fa/status(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/security/2fa/status(?:/)?$"
+    },
+    {
+      "page": "/api/security/2fa/verify",
+      "regex": "^/api/security/2fa/verify(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/security/2fa/verify(?:/)?$"
+    },
+    {
+      "page": "/api/security/password",
+      "regex": "^/api/security/password(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/security/password(?:/)?$"
+    },
+    {
+      "page": "/api/settings",
+      "regex": "^/api/settings(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/settings(?:/)?$"
+    },
+    {
+      "page": "/api/stocks/search",
+      "regex": "^/api/stocks/search(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/stocks/search(?:/)?$"
+    },
+    {
+      "page": "/api/test",
+      "regex": "^/api/test(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/test(?:/)?$"
+    },
+    {
+      "page": "/auth/forgot-password",
+      "regex": "^/auth/forgot\\-password(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/auth/forgot\\-password(?:/)?$"
+    },
+    {
+      "page": "/auth/new-password",
+      "regex": "^/auth/new\\-password(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/auth/new\\-password(?:/)?$"
+    },
+    {
+      "page": "/auth/password-reset-otp",
+      "regex": "^/auth/password\\-reset\\-otp(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/auth/password\\-reset\\-otp(?:/)?$"
+    },
+    {
+      "page": "/auth/reset-password",
+      "regex": "^/auth/reset\\-password(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/auth/reset\\-password(?:/)?$"
+    },
+    {
+      "page": "/dashboard",
+      "regex": "^/dashboard(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/dashboard(?:/)?$"
+    },
+    {
+      "page": "/favicon.ico",
+      "regex": "^/favicon\\.ico(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/favicon\\.ico(?:/)?$"
+    },
+    {
+      "page": "/insights",
+      "regex": "^/insights(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/insights(?:/)?$"
+    },
+    {
+      "page": "/investments",
+      "regex": "^/investments(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/investments(?:/)?$"
+    },
+    {
+      "page": "/login",
+      "regex": "^/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/login(?:/)?$"
+    },
+    {
+      "page": "/reset-password",
+      "regex": "^/reset\\-password(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/reset\\-password(?:/)?$"
+    },
+    {
+      "page": "/settings",
+      "regex": "^/settings(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/settings(?:/)?$"
+    },
+    {
+      "page": "/signup",
+      "regex": "^/signup(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/signup(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

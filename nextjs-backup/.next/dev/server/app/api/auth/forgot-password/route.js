@@ -1,0 +1,13 @@
+var R=require("../../../../chunks/[turbopack]_runtime.js")("server/app/api/auth/forgot-password/route.js")
+R.c("server/chunks/node_modules_next_dist_compiled_react-dom_server_node_aa5d3d0d.js")
+R.c("server/chunks/node_modules_next_dist_esm_b295b82f._.js")
+R.c("server/chunks/node_modules_next_dist_compiled_940bf0b9._.js")
+R.c("server/chunks/node_modules_next_dist_67b7ce76._.js")
+R.c("server/chunks/node_modules_next_server_f77211b9.js")
+R.c("server/chunks/node_modules_c9a905bd._.js")
+R.c("server/chunks/node_modules_js-beautify_js_29990035._.js")
+R.c("server/chunks/node_modules_dcb4bbbd._.js")
+R.c("server/chunks/[root-of-the-server]__e7564103._.js")
+R.c("server/chunks/_next-internal_server_app_api_auth_forgot-password_route_actions_ada86dd3.js")
+R.m("[project]/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/app/api/auth/forgot-password/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript)")
+module.exports=R.m("[project]/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/app/api/auth/forgot-password/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript)").exports

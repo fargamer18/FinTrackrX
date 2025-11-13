@@ -1,0 +1,15 @@
+{
+  "/advisor/page": "app/advisor/page.js",
+  "/api/ai/advisor/route": "app/api/ai/advisor/route.js",
+  "/api/ai/health/route": "app/api/ai/health/route.js",
+  "/api/ai/recommendations/route": "app/api/ai/recommendations/route.js",
+  "/api/auth/login/route": "app/api/auth/login/route.js",
+  "/api/auth/logout/route": "app/api/auth/logout/route.js",
+  "/api/auth/me/route": "app/api/auth/me/route.js",
+  "/api/investments/route": "app/api/investments/route.js",
+  "/api/settings/route": "app/api/settings/route.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/insights/page": "app/insights/page.js",
+  "/investments/page": "app/investments/page.js",
+  "/login/page": "app/login/page.js"
+}

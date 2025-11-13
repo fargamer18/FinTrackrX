@@ -1,0 +1,3 @@
+{
+  "/auth/password-reset-otp/page": "app/auth/password-reset-otp/page.js"
+}

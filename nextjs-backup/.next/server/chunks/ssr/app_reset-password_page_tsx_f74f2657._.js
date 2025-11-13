@@ -1,0 +1,3 @@
+module.exports=[73963,a=>{"use strict";var b=a.i(87924),c=a.i(72131),d=a.i(50944);function e(){let a=(0,d.useRouter)(),e=(0,d.useSearchParams)();return(0,c.useEffect)(()=>{let b=e.toString(),c=b?`/auth/reset-password?${b}`:"/auth/reset-password";a.replace(c)},[e,a]),(0,b.jsx)("div",{className:"min-h-[60vh] flex items-center justify-center text-gray-300 bg-black px-4",children:"Redirecting to password reset…"})}function f(){return(0,b.jsx)(c.Suspense,{fallback:(0,b.jsx)("div",{className:"min-h-[60vh] flex items-center justify-center text-gray-300 bg-black px-4",children:"Loading…"}),children:(0,b.jsx)(e,{})})}a.s(["default",()=>f])}];
+
+//# sourceMappingURL=app_reset-password_page_tsx_f74f2657._.js.map

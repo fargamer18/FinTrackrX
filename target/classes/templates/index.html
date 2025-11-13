@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinTrackrX - Financial Tracking Made Easy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 800px;
+            width: 100%;
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #333;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .feature {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .feature h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+        
+        .api-info {
+            margin-top: 40px;
+            padding: 20px;
+            background: #e7f3ff;
+            border-radius: 10px;
+            text-align: left;
+        }
+        
+        .api-info h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .api-info code {
+            display: block;
+            background: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 FinTrackrX</h1>
+        <p class="subtitle">Your Personal Finance Tracker - Now powered by Spring Boot!</p>
+        
+        <div class="features">
+            <div class="feature">
+                <h3>📊 Track Expenses</h3>
+                <p>Monitor your income and expenses</p>
+            </div>
+            <div class="feature">
+                <h3>💰 Investments</h3>
+                <p>Manage your investment portfolio</p>
+            </div>
+            <div class="feature">
+                <h3>🤖 AI Advisor</h3>
+                <p>Get smart financial insights</p>
+            </div>
+            <div class="feature">
+                <h3>🔒 Secure</h3>
+                <p>2FA and encryption enabled</p>
+            </div>
+        </div>
+        
+        <div class="buttons">
+            <a href="/login" class="btn btn-primary">Login</a>
+            <a href="/signup" class="btn btn-secondary">Sign Up</a>
+        </div>
+        
+        <div class="api-info">
+            <h3>🔌 REST API Endpoints</h3>
+            <p><strong>Authentication:</strong></p>
+            <code>POST /api/auth/signup</code>
+            <code>POST /api/auth/login</code>
+            <code>POST /api/auth/forgot-password</code>
+            
+            <p style="margin-top: 15px;"><strong>Resources:</strong></p>
+            <code>GET /api/accounts</code>
+            <code>GET /api/investments</code>
+            <code>GET /api/health</code>
+            
+            <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">
+                <strong>Note:</strong> This application has been migrated from Next.js to Spring Boot.
+                The frontend can be built separately using React, Angular, or Vue.js to consume these APIs.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
